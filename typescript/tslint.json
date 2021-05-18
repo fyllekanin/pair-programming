@@ -1,7 +1,6 @@
 {
     "rulesDirectory": [
-        "node_modules/codelyzer",
-        "./rules"
+        "node_modules/codelyzer"
     ],
     "rules": {
         "rest-method-accessor": true,
