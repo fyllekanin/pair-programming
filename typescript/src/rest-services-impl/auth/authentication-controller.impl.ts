@@ -2,8 +2,6 @@ import { Controller, Get, Post } from '@overnightjs/core';
 import { Response } from 'express';
 import { InternalRequest } from '../../utilities/internal.request';
 import { StatusCodes } from 'http-status-codes';
-import { HashUtility } from '../../utilities/hash.utility';
-import { sign } from 'jsonwebtoken';
 
 @Controller('api/auth')
 export class AuthenticationControllerImpl {
