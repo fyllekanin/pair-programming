@@ -6,4 +6,4 @@ This project is a collection different pair programming exercises
 
 ### Typescript
 
-[ReadME](typescript/README)
+[README](typescript/README.md)
