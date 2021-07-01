@@ -1,7 +1,21 @@
 # Typescript
 
-This exercise have a working index.html file you can find at src/public/index.html which will do a login request and after the login (successfull or not)
-it will do a request a protected resource.
+Fix the login system to help the user getting access to the protected content.
 
-The exercise is to add the login code at src/rest-services-impl/auth/authentication-controller.impl.ts so that it correctly check the name and password
-and create a token for the user which is later verified in src/rest-services-impl/middlewares/initial.middleware.ts
+## Technologies
+
+* Express (https://expressjs.com/)
+* Jsonwebtoken (https://www.npmjs.com/package/jsonwebtoken)
+* Overnight (https://github.com/seanpmaxwell/overnight)
+
+## Task
+
+After you have installed and started the project, you can head to http://localhost:3000. On this
+page you can see that we are not authorized to see the content.
+
+The index.html file is trying to first login and then fetch the protected content, but we are missing
+code in the login to return the correct authorization data. The task is to make the login work.
+
+Location for login: [auth controller](src/rest-services-impl/auth/authentication-controller.impl.ts)
+
+Verification of the authorization data is done at: [middleware](src/rest-services-impl/middlewares/initial.middleware.ts)
