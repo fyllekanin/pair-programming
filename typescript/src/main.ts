@@ -3,7 +3,6 @@ import { Server } from '@overnightjs/core';
 import { AuthenticationControllerImpl } from './rest-services-impl/auth/authentication-controller.impl';
 import { INITIAL_MIDDLEWARE } from './rest-services-impl/middlewares/initial.middleware';
 import * as express from 'express';
-import compression from 'compression';
 import { PageControllerImpl } from './rest-services-impl/page-controller.impl';
 
 class MainServer extends Server {
@@ -11,7 +10,6 @@ class MainServer extends Server {
     constructor () {
         super();
         this.app.use(express.json());
-        this.app.use(compression());
         this.app.use('/', express.static(__dirname + '/public'));
     }
 

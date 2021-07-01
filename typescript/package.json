@@ -7,7 +7,7 @@
     "clean": "node node_modules/rimraf/bin dist/*",
     "lint": "node node_modules//tslint/bin/tslint -c tslint.json -p tsconfig.json",
     "tsc": "node node_modules/typescript/bin/tsc --build",
-    "build": "node node_modules/npm-run-all/bin/npm-run-all/index clean lint tsc copy-assets",
+    "build": "node node_modules/npm-run-all/bin/npm-run-all/index clean tsc copy-assets",
     "copy-assets": "node scripts/copy-assets.js",
     "dev:start": "node node_modules/npm-run-all/bin/npm-run-all/index build start",
     "dev": "node node_modules/nodemon/bin/nodemon --watch src -e ts,ejs --exec npm run dev:start",

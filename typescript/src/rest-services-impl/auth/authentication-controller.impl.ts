@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@overnightjs/core';
+import { Controller, Post } from '@overnightjs/core';
 import { Response } from 'express';
 import { InternalRequest } from '../../utilities/internal.request';
 import { StatusCodes } from 'http-status-codes';
@@ -13,7 +13,7 @@ export class AuthenticationControllerImpl {
     };
 
     @Post('login')
-    async doLogin (req: InternalRequest, res: Response): Promise<void> {
+    async doLogin (req: InternalRequest<{ username: string, password: string }>, res: Response): Promise<void> {
         res.status(StatusCodes.OK).json({
             token: null
         });
