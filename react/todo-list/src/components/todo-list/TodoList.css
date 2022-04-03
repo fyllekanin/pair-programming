@@ -1,8 +1,0 @@
-.TodoList .task-grid {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 800px;
-    justify-content: center;
-}
-

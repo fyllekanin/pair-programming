@@ -1,12 +1,12 @@
 import './TodoTask.css';
-import { useState } from "react";
+import { useState } from 'react';
 
 function TodoTask(props) {
     const [state, setState] = useState({ isInitial: true });
     if (state.isInitial) {
         setTimeout(() => {
             setState({ isInitial: false });
-        }, 200);
+        }, 100);
     }
 
     const doneButton = props.task.isComplete ? null :
