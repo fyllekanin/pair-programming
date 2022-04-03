@@ -1,14 +1,11 @@
 import './AddTask.css';
-import { useState } from "react";
+import { useState } from 'react';
 
 function AddTask(props) {
     const [state, setState] = useState({ value: '', isError: false });
     const error = state.isError ? <div className="error">The task {state.value} already exists</div> : '';
 
     const onAdd = () => {
-        if (props.existingTasks.includes(state.value)) {
-            return;
-        }
         props.onAdd(state.value);
         setState({ value: '', isError: false });
     };
