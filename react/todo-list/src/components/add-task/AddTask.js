@@ -2,22 +2,22 @@ import './AddTask.css';
 import { useState } from "react";
 
 function AddTask(props) {
-    const [setting, setValue] = useState({value: '', isError: false});
-    const error = setting.isError ? <div className="error">The task {setting.value} already exists</div> : '';
+    const [state, setState] = useState({value: '', isError: false});
+    const error = state.isError ? <div className="error">The task {state.value} already exists</div> : '';
+
     const onAdd = () => {
-        if (props.existingTasks.includes(setting.value)) {
-            setValue({value: setting.value, isError: true});
+        if (props.existingTasks.includes(state.value)) {
             return;
         }
-        props.onAdd(setting.value);
-        setValue({value: '', isError: false});
+        props.onAdd(state.value);
+        setState({value: '', isError: false});
     };
 
     return (
         <div className="AddTask">
             {error}
-            <input type="text" placeholder="Add new task..." id="add-task-input" value={setting.value}
-                   onChange={evt => setValue({value: evt.target.value, isError: setting.isError})}/>
+            <input type="text" placeholder="Add new task..." id="add-task-input" value={state.value}
+                   onChange={evt => setState({value: evt.target.value, isError: state.isError})}/>
             <button onClick={onAdd}>Add</button>
         </div>
     )

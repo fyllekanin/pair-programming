@@ -4,35 +4,35 @@ import { useState } from 'react';
 import AddTask from "../add-task/AddTask";
 
 const initialList = [
-    {name: 'First Task', isComplete: false},
-    {name: 'Second Task', isComplete: false},
-    {name: 'Third Task', isComplete: false}
+    { name: 'First Task', isComplete: false },
+    { name: 'Second Task', isComplete: false },
+    { name: 'Third Task', isComplete: false }
 ];
 
 function TodoList() {
-    const [tasks, setTasks] = useState(initialList);
+    const [state, setState] = useState(initialList);
 
     const onComplete = task => {
-        const item = tasks.find(i => i.name === task);
+        const item = state.find(i => i.name === task);
         item.isComplete = true;
 
-        setTasks([...tasks]);
+        setState([...state]);
     };
 
     const onDiscard = task => {
-        setTasks(tasks.filter(item => item.name !== task));
+        setState(state.filter(item => item.name !== task));
     };
 
     const onAdd = task => {
-        tasks.push({name: task, isComplete: false});
-        setTasks([...tasks]);
+        state.push({ name: task, isComplete: false });
+        setState([...state]);
     };
 
     return (
         <div className="TodoList">
-            <AddTask onAdd={onAdd} existingTasks={tasks.map(task => task.name)}/>
+            <AddTask onAdd={onAdd} existingTasks={state.map(task => task.name)}/>
             <div className="task-grid">
-                {tasks.map((item, index) => (
+                {state.map((item, index) => (
                     <TodoTask key={index} onComplete={onComplete} onDiscard={onDiscard} task={item}/>))}
             </div>
         </div>
