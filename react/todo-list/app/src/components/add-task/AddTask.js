@@ -4,7 +4,7 @@ import { useState } from 'react';
 function AddTask(props) {
     const [state, setState] = useState({ value: '', isError: false });
     const errorText = state.value ? `The task ${state.value} already exists` : 'You can not add an empty task';
-    const error = state.isError ? <div className="error">{errorText}</div> : '';
+    const error = state.isError ? <div className="error">{errorText}</div> : null;
 
     const onAdd = evt => {
         evt.preventDefault();
