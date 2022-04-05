@@ -21,7 +21,7 @@ function AddTask(props) {
             {error}
             <form onSubmit={onAdd}>
                 <input type="text" placeholder="Add new task..." id="add-task-input" value={state.value}
-                       onChange={evt => setState({ value: evt.target.value, isError: state.isError })}/>
+                       onChange={evt => setState({ value: evt.target.value, isError: false })}/>
                 <button type="submit" onClick={onAdd}>Add</button>
             </form>
         </div>
