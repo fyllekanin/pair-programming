@@ -3,11 +3,12 @@ import { useState } from 'react';
 
 function AddTask(props) {
     const [state, setState] = useState({ value: '', isError: false });
-    const error = state.isError ? <div className="error">The task {state.value} already exists</div> : '';
+    const errorText = state.value ? `The task ${state.value} already exists` : 'You can not add an empty task';
+    const error = state.isError ? <div className="error">{errorText}</div> : '';
 
     const onAdd = evt => {
         evt.preventDefault();
-        if (props.existingTasks.includes(state.value)) {
+        if (props.existingTasks.includes(state.value) || !state.value) {
             setState({ value: state.value, isError: true });
             return;
         }
