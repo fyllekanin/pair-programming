@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function AddTask(props) {
     const [state, setState] = useState({ value: '', isError: false });
-    const error = state.isError ? <div className="error">The task {state.value} already exists</div> : '';
+    const error = state.isError ? <div className="error">Something went wrong, could not add task</div> : '';
 
     const onAdd = () => {
         props.onAdd(state.value);
